@@ -7,6 +7,7 @@ const {
   updateUser,
   getUser,
 } = require('../controllers/user')
+
 const router = express.Router({ mergeParams: true })
 
 router.route('/').get(getUsers).post(CreateUser)

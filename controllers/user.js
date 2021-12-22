@@ -19,7 +19,13 @@ exports.getUser = asyncHanlder(async (req, res) => {
 // create/register
 
 exports.CreateUser = asyncHanlder(async (req, res) => {
-  console.log('body', req.body)
+  // error handling
+  if (!req.body) {
+    res.status(500).json({
+      success: false,
+      message: 'Incorrect data',
+    })
+  }
   const user = await User.create(req.body)
   res.status(201).json({
     success: true,

@@ -24,6 +24,7 @@ const userRoute = require('./routes/user')
 
 // mount
 app.use('/api/users', userRoute)
+
 app.use(compression())
 
 app.listen(port, () => {
